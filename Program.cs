@@ -142,9 +142,9 @@ void best_choice(List<string> ans_words, List<string> pos_words)
 while (true)
 {
     Console.Write("Sure: ");
-    string sure = Console.ReadLine();
+    string sure = Console.ReadLine(); // ___r_
     Console.Write("Unsure: ");
-    string unsure = Console.ReadLine();
+    string unsure = Console.ReadLine(); // _a_r_
     Console.Write("Not: ");
     string not_given = Console.ReadLine();
 
