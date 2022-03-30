@@ -169,11 +169,13 @@ while (true)
     if (pos_words.Count == 1)
     {
         Console.WriteLine("Solution: " + pos_words[0]);
+        Console.ReadLine();
         break;
     }
     else if (pos_words.Count == 0)
     {
         Console.WriteLine("Something went wrong");
+        Console.ReadLine();
         break;
     }
     else
