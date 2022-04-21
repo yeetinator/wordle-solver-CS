@@ -169,20 +169,24 @@ while (true)
     if (pos_words.Count == 1)
     {
         Console.WriteLine("Solution: " + pos_words[0]);
-        string stop = Console.ReadLine();
-        if (stop == "n")
+        Console.WriteLine("Restart? (Y/n) ");
+        string restart = Console.ReadLine();
+
+        if (restart == "n")
         {
             break;
+        }
+        else
+        {
+            pos_words = File.ReadAllLines(@"C:\Users\denis.boone\programming\c#\wordle-solver-CS\possible.txt").ToList();
+            ans_words = File.ReadAllLines(@"C:\Users\denis.boone\programming\c#\wordle-solver-CS\words.txt").ToList();
         }
     }
     else if (pos_words.Count == 0)
     {
         Console.WriteLine("Something went wrong");
         string stop = Console.ReadLine();
-        if (stop == "n")
-        {
-            break;
-        }
+        break;
     }
     else
     {
