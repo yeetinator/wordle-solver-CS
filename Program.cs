@@ -11,7 +11,7 @@ void not_given_loop(List<string> list, string not_given)
             if (list[i].Contains(letter))
             {
                 list.RemoveAt(i);
-                i--; // will skip a word if not called
+                i--; // will skip a word if i-- not called
                 break;
             }
         }
