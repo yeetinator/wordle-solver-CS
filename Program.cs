@@ -118,14 +118,36 @@ void best_choice(List<string> ans_words, List<string> pos_words)
         foreach (string word in ans_words)
         {
             int score = 0;
+            string prev = "";
+            
             foreach (char letter in "eariotn")
             {
-                if (word.Contains(letter))
+                if (word.Contains(letter) && !prev.Contains(letter))
                 {
                     score += 1;
+                    prev += letter;
                 }
             }
             d.Add(word, score);
+        }
+        if (d.Values.Max() < 3)
+        {
+            d.Clear();
+            foreach (string word in ans_words)
+            {
+                int score = 0;
+                string prev = "";
+
+                foreach (char letter in "eariotnslcudp")
+                {
+                    if (word.Contains(letter) && !prev.Contains(letter))
+                    {
+                        score += 1;
+                        prev += letter;
+                    }
+                }
+                d.Add(word, score);
+            }
         }
         string key = d.Aggregate((l, r) => l.Value > r.Value ? l : r).Key;
         Console.WriteLine("Best choice: " + key);
